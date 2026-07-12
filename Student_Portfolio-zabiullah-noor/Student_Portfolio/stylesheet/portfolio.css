@@ -1,0 +1,395 @@
+/***** MODERN DESIGN VARIABLES *****/
+:root {
+    --primary-color: #1565c0;
+    --primary-dark: #0d47a1;
+    --accent-color: #00cec9;
+    --text-main: #2d3436;
+    --text-dark: #1e272e;
+    --bg-light: #f8f9fa;
+    --bg-white: #ffffff;
+    --glass-bg: rgba(255, 255, 255, 0.1);
+    --glass-border: rgba(255, 255, 255, 0.2);
+    --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.05);
+    --shadow-strong: 0 15px 35px rgba(13, 71, 161, 0.12);
+    --transition-smooth: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+/***** GENERAL RESET & STYLING *****/
+* { 
+    box-sizing: border-box; 
+    margin: 0;
+    padding: 0;
+} 
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-light);
+    color: var(--text-main);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.Content_Wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 20px;
+}
+
+/***** HEADINGS & TEXT *****/
+h1 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: var(--text-dark);
+    margin-bottom: 25px;
+    position: relative;
+    display: inline-block;
+}
+
+/* Subtle accent underline for section headers */
+section h1::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 50px;
+    height: 4px;
+    background: var(--primary-color);
+    border-radius: 2px;
+    transition: var(--transition-smooth);
+}
+
+section:hover h1::after {
+    width: 80px;
+    background: var(--accent-color);
+}
+
+p {
+    font-weight: 300;
+    font-size: 16px;
+    margin-bottom: 18px;
+    color: #555;
+}
+
+.Highlight {
+    font-weight: 600;
+    color: #fff;
+    background: linear-gradient(120deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+    padding: 2px 8px;
+    border-radius: 4px;
+}
+
+/***** FIXED NAVBAR *****/
+.Navbar {
+    position: fixed; 
+    top: 0; 
+    width: 100%; 
+    z-index: 100; 
+    background: rgba(13, 71, 161, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1); 
+    animation: slideDown 0.6s ease-out;
+}
+
+.Nav-Container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+}
+
+.Navbar a {
+    color: rgba(255, 255, 255, 0.8); 
+    padding: 20px 30px; 
+    text-decoration: none; 
+    font-size: 15px; 
+    font-weight: 500;
+    letter-spacing: 1px;
+    transition: var(--transition-smooth);
+}
+
+.Navbar a:hover, .Navbar a.active {
+    color: #fff;
+    background-color: var(--primary-color);
+}
+
+@keyframes slideDown {
+    from { transform: translateY(-100%); }
+    to { transform: translateY(0); }
+}
+
+/***** CREATIVE HERO / VIDEO SECTION *****/
+.Hero_Section {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+#Typing_Video {
+    position: absolute; 
+    top: 50%;
+    left: 50%;
+    min-width: 100%; 
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -2; 
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+}
+
+/* Dark professional overlay filter over video */
+.Hero_Section::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(135deg, rgba(7, 38, 87, 0.85) 0%, rgba(0, 0, 0, 0.6) 100%);
+    z-index: -1;
+}
+
+.Video_Text {
+    max-width: 800px;
+    padding: 40px; 
+    text-align: center;
+    z-index: 1;
+}
+
+.white-text {
+    color: #fff;
+    font-size: 3rem;
+    margin-bottom: 20px;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+/* Glassmorphism content container */
+.Hero_Content {
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    padding: 35px;
+    border-radius: 16px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+}
+
+.Quote {
+    display: block;
+    font-style: italic; 
+    font-size: 20px;
+    color: var(--accent-color);
+    margin-bottom: 25px;
+    font-weight: 400;
+}
+
+.Intro_Text {
+    color: #f1f2f6;
+    font-size: 16px;
+    font-weight: 300;
+    text-align: center;
+}
+
+.Thank_You {
+    color: #fff;
+    font-weight: 500;
+    margin-top: 15px;
+    font-size: 15px;
+}
+
+/***** FLEXBOX/GRID LAYOUT FOR CARDS *****/
+.Card_Layout {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    background-color: var(--bg-white);
+    border-radius: 20px;
+    margin-bottom: 50px;
+    overflow: hidden;
+    box-shadow: var(--shadow-soft);
+    transition: var(--transition-smooth);
+}
+
+.Card_Layout:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-strong);
+}
+
+.Card_Layout.Reverse {
+    flex-direction: row-reverse;
+}
+
+.Column {
+    flex: 1;
+    min-width: 300px;
+    padding: 50px;
+}
+
+.Image_Side {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #eef2f7 0%, #dfe6e9 100%);
+    align-self: stretch;
+}
+
+.Image_Side img {
+    max-width: 85%;
+    max-height: 350px;
+    object-fit: contain;
+    border-radius: 12px;
+    transition: var(--transition-smooth);
+}
+
+.Card_Layout:hover .Image_Side img {
+    transform: scale(1.05);
+}
+
+/***** MODERNISED BUTTONS & LINKS *****/
+.Btn_Link {
+    display: inline-block;
+    color: var(--primary-color);
+    font-weight: 600;
+    text-decoration: none;
+    margin-top: 15px;
+    transition: var(--transition-smooth);
+}
+
+.Btn_Link:hover {
+    color: var(--primary-dark);
+    transform: translateX(5px);
+}
+
+.Center_Btn {
+    text-align: left;
+    margin-top: 25px;
+}
+
+.Btn_Primary {
+    display: inline-block;
+    background: var(--primary-color);
+    color: #fff;
+    padding: 12px 28px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 15px rgba(21, 101, 192, 0.2);
+    transition: var(--transition-smooth);
+}
+
+.Btn_Primary:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(13, 71, 161, 0.3);
+}
+
+/***** PREMIUM CONTACT FORM *****/
+.Form_Side {
+    background-color: var(--bg-white);
+}
+
+.Modern_Form {
+    margin-top: 20px;
+}
+
+.Form_Group {
+    margin-bottom: 20px;
+}
+
+.Form_Group label {
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 8px;
+    color: var(--text-dark);
+}
+
+.Modern_Form input[type=text],
+.Modern_Form input[type=email],
+.Modern_Form textarea {
+    width: 100%; 
+    padding: 14px; 
+    border: 1px solid #e1e8ed; 
+    border-radius: 8px; 
+    background-color: #fcfcfc;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    color: var(--text-dark);
+    transition: var(--transition-smooth);
+}
+
+.Modern_Form input:focus,
+.Modern_Form textarea:focus {
+    outline: none;
+    background-color: #fff;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 4px rgba(21, 101, 192, 0.1);
+}
+
+.Btn_Submit {
+    width: 100%;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+    color: white; 
+    font-weight: 600; 
+    padding: 15px; 
+    border: none; 
+    border-radius: 8px; 
+    cursor: pointer; 
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 14px;
+    box-shadow: 0 4px 15px rgba(13, 71, 161, 0.2);
+    transition: var(--transition-smooth);
+}
+
+.Btn_Submit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(13, 71, 161, 0.35);
+}
+
+/***** FOOTER *****/
+footer {
+    padding: 35px 20px; 
+    background-color: #072657;
+    color: white;
+    text-align: center;
+    font-size: 14px;
+}
+
+/***** MOBILE RESPONSIVENESS (MEDIA QUERIES) *****/
+@media screen and (max-width: 768px) {
+    .Navbar a {
+        padding: 15px 15px;
+        font-size: 13px;
+    }
+    
+    .white-text {
+        font-size: 2.2rem;
+    }
+    
+    .Hero_Content {
+        padding: 20px;
+    }
+
+    .Quote {
+        font-size: 16px;
+    }
+
+    .Column {
+        padding: 30px 20px;
+    }
+
+    .Card_Layout.Reverse {
+        flex-direction: flex-wrap; /* Reset reverse columns behavior on small viewports */
+    }
+
+    .hide-on-mobile {
+        display: none;
+    }
+}

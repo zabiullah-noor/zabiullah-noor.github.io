@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zabiullah Noor | Portfolio</title>
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="stylesheet/portfolio.css">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="Navbar">
+        <div class="Nav-Container">
+            <a class="active" href="#Home">Home</a>
+            <a href="#About">About</a>
+            <a href="#GitHub">GitHub</a>
+            <a href="#Contact">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Home / Hero Section -->
+    <header id="Home" class="Hero_Section">
+        <video autoplay muted loop id="Typing_Video">
+            <source src="images/video/Typing1.mp4" type="video/mp4">
+            Your browser does not support HTML5 video.
+        </video>
+        
+        <div class="Video_Text">
+            <h1 class="white-text">Zabiullah Noor's Portfolio</h1>
+            <div class="Hero_Content">
+                <q class="Quote">
+                    Every expert was once a beginner. Keep learning, keep building, and never stop improving.
+                </q>
+                <p class="Intro_Text">
+                    Hello! My name is <span class="Highlight">Zabiullah Noor</span>. I am an aspiring Software Developer currently studying Web Development. I enjoy creating responsive websites and continuously improving my programming skills using HTML, CSS, JavaScript, GitHub, and Visual Studio Code.
+                </p>
+                <p class="Thank_You">Thank you for visiting my portfolio!</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="Content_Wrapper">
+
+        <!-- About Section -->
+        <section class="Row Card_Layout" id="About">
+            <div class="Column Image_Side">
+                <img src="images/mine.jpeg" alt="About Me">
+            </div>
+            <div class="Column Text_Side">
+                <h1>About Me</h1>
+                <p>I am passionate about web development and enjoy turning ideas into functional and attractive websites.</p>
+                <p>I am currently studying Software Development where I am learning HTML, CSS, JavaScript, GitHub, SQL, and other programming technologies.</p>
+                <p>Besides coding, I enjoy learning new technologies, solving problems, and continuously improving my skills.</p>
+                <p>My goal is to become a professional Full-Stack Developer and contribute to exciting software projects.</p>
+                <a href="#Contact" class="Btn_Link">Let's connect! →</a>
+            </div>
+        </section>
+
+        <!-- GitHub Section -->
+        <section class="Row Card_Layout Reverse" id="GitHub">
+            <div class="Column Text_Side">
+                <h1>GitHub</h1>
+                <p>I regularly upload my coding projects and assignments to GitHub. Check out my repositories to see what I've been working on recently.</p>
+                <div class="Center_Btn">
+                    <a href="https://github.com/zabiullah-noor" target="_blank" class="Btn_Primary">
+                        Visit My GitHub Profile
+                    </a>
+                </div>
+            </div>
+            <div class="Column Image_Side">
+                <a href="https://github.com/zabiullah-noor" target="_blank" class="Img_Hover_Wrap">
+                    <img src="images/github.jpg" alt="GitHub">
+                </a>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="Row Card_Layout" id="Contact">
+            <div class="Column Image_Side hide-on-mobile">
+                <img src="images/contact.jpg" alt="Contact">
+            </div>
+            <div class="Column Form_Side">
+                <h1>Contact</h1>
+                <form action="" method="POST" class="Modern_Form">
+                    <div class="Form_Group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" placeholder="Enter your name" required>
+                    </div>
+
+                    <div class="Form_Group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" placeholder="Enter your email" required>
+                    </div>
+
+                    <div class="Form_Group">
+                        <label for="message">Message</label>
+                        <textarea id="message" rows="4" placeholder="Write your message..." required></textarea>
+                    </div>
+
+                    <button type="submit" class="Btn_Submit">Send Message</button>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Zabiullah Noor | Portfolio Website</p>
+    </footer>
+
+</body>
+</html>
