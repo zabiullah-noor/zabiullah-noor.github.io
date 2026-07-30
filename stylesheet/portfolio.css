@@ -50,7 +50,6 @@ h1 {
     display: inline-block;
 }
 
-/* Subtle accent underline for section headers */
 section h1::after {
     content: '';
     position: absolute;
@@ -122,7 +121,7 @@ p {
     to { transform: translateY(0); }
 }
 
-/***** CREATIVE HERO / VIDEO SECTION *****/
+/***** HERO / VIDEO SECTION *****/
 .Hero_Section {
     position: relative;
     height: 100vh;
@@ -145,7 +144,6 @@ p {
     object-fit: cover;
 }
 
-/* Dark professional overlay filter over video */
 .Hero_Section::before {
     content: '';
     position: absolute;
@@ -168,7 +166,6 @@ p {
     text-shadow: 0 2px 10px rgba(0,0,0,0.3);
 }
 
-/* Glassmorphism content container */
 .Hero_Content {
     background: var(--glass-bg);
     backdrop-filter: blur(12px);
@@ -188,11 +185,32 @@ p {
     font-weight: 400;
 }
 
-.Intro_Text {
-    color: #f1f2f6;
-    font-size: 16px;
+/* Dynamic Typing Animation Styling */
+#typing-container {
+    font-size: 1.15rem;
     font-weight: 300;
-    text-align: center;
+    color: #f1f2f6;
+    min-height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#typing-text {
+    color: var(--accent-color);
+    font-weight: 500;
+}
+
+.cursor {
+    font-weight: 300;
+    color: var(--accent-color);
+    animation: blink 0.8s infinite;
+    margin-left: 2px;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
 }
 
 .Thank_You {
@@ -202,7 +220,7 @@ p {
     font-size: 15px;
 }
 
-/***** FLEXBOX/GRID LAYOUT FOR CARDS *****/
+/***** CARD LAYOUTS *****/
 .Card_Layout {
     display: flex;
     flex-wrap: wrap;
@@ -213,6 +231,8 @@ p {
     overflow: hidden;
     box-shadow: var(--shadow-soft);
     transition: var(--transition-smooth);
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .Card_Layout:hover {
@@ -250,7 +270,7 @@ p {
     transform: scale(1.05);
 }
 
-/***** MODERNISED BUTTONS & LINKS *****/
+/***** BUTTONS & LINKS *****/
 .Btn_Link {
     display: inline-block;
     color: var(--primary-color);
@@ -289,68 +309,117 @@ p {
     box-shadow: 0 6px 20px rgba(13, 71, 161, 0.3);
 }
 
-/***** PREMIUM CONTACT FORM *****/
-.Form_Side {
-    background-color: var(--bg-white);
+/***** FLOATING CONTACT BUTTON *****/
+.Floating_Contact {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background-color: var(--primary-color);
+    color: #ffffff;
+    border: none;
+    border-radius: 50px;
+    padding: 14px 26px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    transition: var(--transition-smooth);
+    z-index: 999;
 }
 
-.Modern_Form {
-    margin-top: 20px;
+.Floating_Contact:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-3px);
 }
 
-.Form_Group {
+/***** SLIDING CONTACT PANEL *****/
+.Contact_Panel {
+    position: fixed;
+    top: 0;
+    right: -420px;
+    width: 380px;
+    height: 100vh;
+    background-color: #ffffff;
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.15);
+    padding: 40px 30px;
+    box-sizing: border-box;
+    transition: right 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+}
+
+.Contact_Panel.active {
+    right: 0;
+}
+
+.Close_Button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 1.4rem;
+    cursor: pointer;
+    color: #666666;
+    transition: color 0.2s ease;
+}
+
+.Close_Button:hover {
+    color: #000000;
+}
+
+.Contact_Panel h2 {
     margin-bottom: 20px;
-}
-
-.Form_Group label {
-    display: block;
-    font-size: 14px;
-    font-weight: 500;
-    margin-bottom: 8px;
+    font-size: 1.5rem;
     color: var(--text-dark);
 }
 
-.Modern_Form input[type=text],
-.Modern_Form input[type=email],
-.Modern_Form textarea {
-    width: 100%; 
-    padding: 14px; 
-    border: 1px solid #e1e8ed; 
-    border-radius: 8px; 
-    background-color: #fcfcfc;
-    font-family: 'Poppins', sans-serif;
-    font-size: 14px;
-    color: var(--text-dark);
-    transition: var(--transition-smooth);
+.Contact_Panel .Modern_Form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
 
-.Modern_Form input:focus,
-.Modern_Form textarea:focus {
-    outline: none;
-    background-color: #fff;
-    border-color: var(--primary-color);
-    box-shadow: 0 0 0 4px rgba(21, 101, 192, 0.1);
-}
-
-.Btn_Submit {
+.Contact_Panel input,
+.Contact_Panel textarea {
     width: 100%;
-    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
-    color: white; 
-    font-weight: 600; 
-    padding: 15px; 
-    border: none; 
-    border-radius: 8px; 
-    cursor: pointer; 
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    font-size: 14px;
-    box-shadow: 0 4px 15px rgba(13, 71, 161, 0.2);
+    padding: 12px;
+    border: 1px solid #dddddd;
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 0.95rem;
+    box-sizing: border-box;
     transition: var(--transition-smooth);
 }
 
-.Btn_Submit:hover {
+.Contact_Panel input:focus,
+.Contact_Panel textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(21, 101, 192, 0.1);
+}
+
+.Contact_Panel textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.Contact_Panel .Btn_Submit {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+    color: #ffffff;
+    border: none;
+    padding: 14px;
+    border-radius: 6px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+}
+
+.Contact_Panel .Btn_Submit:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(13, 71, 161, 0.35);
+    box-shadow: 0 6px 20px rgba(13, 71, 161, 0.3);
 }
 
 /***** FOOTER *****/
@@ -362,10 +431,10 @@ footer {
     font-size: 14px;
 }
 
-/***** MOBILE RESPONSIVENESS (MEDIA QUERIES) *****/
+/***** RESPONSIVENESS *****/
 @media screen and (max-width: 768px) {
     .Navbar a {
-        padding: 15px 15px;
+        padding: 15px 12px;
         font-size: 13px;
     }
     
@@ -386,10 +455,10 @@ footer {
     }
 
     .Card_Layout.Reverse {
-        flex-direction: flex-wrap; /* Reset reverse columns behavior on small viewports */
+        flex-direction: row;
     }
 
-    .hide-on-mobile {
-        display: none;
+    .Contact_Panel {
+        width: 100%;
     }
 }

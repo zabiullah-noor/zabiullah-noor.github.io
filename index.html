@@ -16,30 +16,32 @@
             <a class="active" href="#Home">Home</a>
             <a href="#About">About</a>
             <a href="#GitHub">GitHub</a>
+            <a href="#LinkedIn">LinkedIn</a>
             <a href="#Contact">Contact</a>
         </div>
     </nav>
 
     <!-- Home / Hero Section -->
-    <header id="Home" class="Hero_Section">
-        <video autoplay muted loop id="Typing_Video">
-            <source src="images/video/Typing1.mp4" type="video/mp4">
-            Your browser does not support HTML5 video.
-        </video>
-        
-        <div class="Video_Text">
-            <h1 class="white-text">Zabiullah Noor's Portfolio</h1>
-            <div class="Hero_Content">
-                <q class="Quote">
-                    Every expert was once a beginner. Keep learning, keep building, and never stop improving.
-                </q>
-                <p class="Intro_Text">
-                    Hello! My name is <span class="Highlight">Zabiullah Noor</span>. I am an aspiring Software Developer currently studying Web Development. I enjoy creating responsive websites and continuously improving my programming skills using HTML, CSS, JavaScript, GitHub, and Visual Studio Code.
-                </p>
-                <p class="Thank_You">Thank you for visiting my portfolio!</p>
+<header id="Home" class="Hero_Section">
+    <video autoplay muted loop id="Typing_Video">
+        <source src="images/video/Typing1.mp4" type="video/mp4">
+        Your browser does not support HTML5 video.
+    </video>
+    
+    <div class="Video_Text">
+        <h1 class="white-text">Zabiullah Noor's Portfolio</h1>
+        <div class="Hero_Content">
+            <q class="Quote">
+                Every expert was once a beginner. Keep learning, keep building, and never stop improving.
+            </q>
+            <!-- Animated Dynamic Typing Container -->
+            <div id="typing-container">
+                <span id="typing-text"></span><span class="cursor">|</span>
             </div>
+            <p class="Thank_You">Thank you for visiting my portfolio!</p>
         </div>
-    </header>
+    </div>
+</header>
 
     <!-- Main Content Container -->
     <main class="Content_Wrapper">
@@ -77,8 +79,35 @@
             </div>
         </section>
 
+        <!-- LinkedIn Section -->
+<section class="Row Card_Layout Reverse" id="LinkedIn">
+    <div class="Column Text_Side">
+        <h1>LinkedIn</h1>
+
+        <p>
+            Visit my LinkedIn profile to learn more about my education,
+            skills, and professional experience. I am always interested
+            in connecting with other developers and professionals.
+        </p>
+
+        <div class="Center_Btn">
+            <a href="www.linkedin.com/in/zabiullah-noor-1a97a6380"
+               target="_blank"
+               class="Btn_Primary">
+                Visit My LinkedIn Profile
+            </a>
+        </div>
+    </div>
+
+    <div class="Column Image_Side">
+        <a href="https://www.linkedin.com/in/YOUR-LINKEDIN-USERNAME/" target="_blank">
+            <img src="images/linkedin.png" alt="LinkedIn Logo">
+        </a>
+    </div>
+</section>
+
         <!-- Contact Section -->
-        <section class="Row Card_Layout" id="Contact">
+        <!-- <section class="Row Card_Layout" id="Contact">
             <div class="Column Image_Side hide-on-mobile">
                 <img src="images/contact.jpg" alt="Contact">
             </div>
@@ -103,10 +132,38 @@
                     <button type="submit" class="Btn_Submit">Send Message</button>
                 </form>
             </div>
-        </section>
+        </section> -->
 
+        <button id="openContact" class="Floating_Contact">
+    💬 Contact Me
+</button>
+
+
+<!-- Sliding Contact Panel -->
+<div id="contactPanel" class="Contact_Panel">
+
+    <button id="closeContact" class="Close_Button">
+        ✖
+    </button>
+
+    <h2>Contact Me</h2>
+
+    <form class="Modern_Form">
+
+        <input type="text" placeholder="Your Name" required>
+
+        <input type="email" placeholder="Your Email" required>
+
+        <textarea placeholder="Your Message"></textarea>
+
+        <button class="Btn_Submit">
+            Send
+        </button>
+
+    </form>
+    </div>
     </main>
-
+    <script src="js/portfolio.js"></script>
     <!-- Footer -->
     <footer>
         <p>&copy; 2026 Zabiullah Noor | Portfolio Website</p>
