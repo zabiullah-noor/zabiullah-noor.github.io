@@ -1,13 +1,95 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zabiullah Noor | Portfolio</title>
+
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="stylesheet/portfolio.css">
+
+    <!-- Projects and Skills Section Styling -->
+    <style>
+        .Projects_Section, .Skills_Section {
+            padding: 60px 8%;
+            text-align: center;
+        }
+
+        .Projects_Section h1, .Skills_Section h1 {
+            margin-bottom: 15px;
+        }
+
+        .Section_Description {
+            margin-bottom: 35px;
+        }
+
+        .Project_Container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .Project_Card {
+            padding: 25px;
+            border-radius: 12px;
+            background: #f5f5f5;
+            color: #222;
+            text-align: left;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .Project_Card:hover {
+            transform: translateY(-5px);
+        }
+
+        .Project_Card h2 {
+            margin-bottom: 12px;
+            color: #222;
+        }
+
+        .Project_Card p {
+            line-height: 1.7;
+            margin-bottom: 12px;
+        }
+
+        .Project_Tech {
+            font-size: 14px;
+            font-weight: 500;
+            color: #555;
+        }
+
+        .Skills_Container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        .Skill_Item {
+            background: #222;
+            color: white;
+            padding: 12px 22px;
+            border-radius: 25px;
+            font-size: 15px;
+            transition: background 0.3s ease;
+        }
+
+        .Skill_Item:hover {
+            background: #007bff;
+        }
+
+        @media screen and (max-width: 600px) {
+            .Projects_Section, .Skills_Section {
+                padding: 40px 5%;
+            }
+        }
+    </style>
 </head>
+
 <body>
 
     <!-- Navigation -->
@@ -15,6 +97,8 @@
         <div class="Nav-Container">
             <a class="active" href="#Home">Home</a>
             <a href="#About">About</a>
+            <a href="#Projects">Projects</a>
+            <a href="#Skills">Skills</a>
             <a href="#GitHub">GitHub</a>
             <a href="#LinkedIn">LinkedIn</a>
             <a href="#Contact">Contact</a>
@@ -22,26 +106,28 @@
     </nav>
 
     <!-- Home / Hero Section -->
-<header id="Home" class="Hero_Section">
-    <video autoplay muted loop id="Typing_Video">
-        <source src="images/video/Typing1.mp4" type="video/mp4">
-        Your browser does not support HTML5 video.
-    </video>
-    
-    <div class="Video_Text">
-        <h1 class="white-text">Zabiullah Noor's Portfolio</h1>
-        <div class="Hero_Content">
-            <q class="Quote">
-                Every expert was once a beginner. Keep learning, keep building, and never stop improving.
-            </q>
-            <!-- Animated Dynamic Typing Container -->
-            <div id="typing-container">
-                <span id="typing-text"></span><span class="cursor">|</span>
+    <header id="Home" class="Hero_Section">
+        <video autoplay muted loop id="Typing_Video">
+            <source src="images/video/Typing1.mp4" type="video/mp4">
+            Your browser does not support HTML5 video.
+        </video>
+
+        <div class="Video_Text">
+            <h1 class="white-text">Zabiullah Noor's Portfolio</h1>
+
+            <div class="Hero_Content">
+                <q class="Quote">
+                    Every expert was once a beginner. Keep learning, keep building, and never stop improving.
+                </q>
+
+                <div id="typing-container">
+                    <span id="typing-text"></span><span class="cursor">|</span>
+                </div>
+
+                <p class="Thank_You">Thank you for visiting my portfolio!</p>
             </div>
-            <p class="Thank_You">Thank you for visiting my portfolio!</p>
         </div>
-    </div>
-</header>
+    </header>
 
     <!-- Main Content Container -->
     <main class="Content_Wrapper">
@@ -51,119 +137,217 @@
             <div class="Column Image_Side">
                 <img src="images/mine.jpeg" alt="About Me">
             </div>
+
             <div class="Column Text_Side">
                 <h1>About Me</h1>
+
                 <p>I am passionate about web development and enjoy turning ideas into functional and attractive websites.</p>
-                <p>I am currently studying Software Development where I am learning HTML, CSS, JavaScript, GitHub, SQL, and other programming technologies.</p>
+
+                <p>I am currently studying Software Development where I am learning HTML, CSS, JavaScript, C#, ASP.NET MVC, SQL, and other programming technologies.</p>
+
                 <p>Besides coding, I enjoy learning new technologies, solving problems, and continuously improving my skills.</p>
+
                 <p>My goal is to become a professional Full-Stack Developer and contribute to exciting software projects.</p>
+
                 <a href="#Contact" class="Btn_Link">Let's connect! →</a>
             </div>
         </section>
 
+
+        <!-- Projects Section -->
+        <section class="Projects_Section" id="Projects">
+
+            <h1>My Projects</h1>
+
+            <p class="Section_Description">
+                Here are some of the projects I have worked on during my software development studies.
+                These projects helped me improve my programming and problem-solving skills.
+            </p>
+
+            <div class="Project_Container">
+
+                <!-- Car Insurance Project -->
+                <div class="Project_Card">
+                    <h2>Car Insurance Application</h2>
+
+                    <p>
+                        An ASP.NET Core MVC application developed using C#.
+                        The application demonstrates MVC architecture,
+                        database integration, and basic CRUD operations.
+                    </p>
+
+                    <p class="Project_Tech">
+                        Technologies: C#, ASP.NET Core MVC, Entity Framework Core, SQL Server
+                    </p>
+                </div>
+
+                <!-- C# Final Assignment -->
+                <div class="Project_Card">
+                    <h2>C# Final Assignment</h2>
+
+                    <p>
+                        A collection of C# programming exercises covering
+                        object-oriented programming concepts, classes,
+                        inheritance, interfaces, polymorphism, and operator overloading.
+                    </p>
+
+                    <p class="Project_Tech">
+                        Technologies: C#, .NET, Visual Studio
+                    </p>
+                </div>
+
+                <!-- MERN Project -->
+                <div class="Project_Card">
+                    <h2>E-Learning Platform</h2>
+
+                    <p>
+                        A web-based learning management platform where
+                        students and teachers can interact with courses,
+                        assignments, quizzes, and learning materials.
+                    </p>
+
+                    <p class="Project_Tech">
+                        Technologies: MongoDB, Express.js, React.js, Node.js
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- Technical Skills Section -->
+        <section class="Skills_Section" id="Skills">
+
+            <h1>Technical Skills</h1>
+
+            <p class="Section_Description">
+                Technologies and programming concepts I have learned and practiced
+                through my coursework and personal projects.
+            </p>
+
+            <div class="Skills_Container">
+                <span class="Skill_Item">C#</span>
+                <span class="Skill_Item">.NET</span>
+                <span class="Skill_Item">ASP.NET Core MVC</span>
+                <span class="Skill_Item">Entity Framework Core</span>
+                <span class="Skill_Item">SQL Server</span>
+                <span class="Skill_Item">HTML</span>
+                <span class="Skill_Item">CSS</span>
+                <span class="Skill_Item">JavaScript</span>
+                <span class="Skill_Item">React.js</span>
+                <span class="Skill_Item">Node.js</span>
+                <span class="Skill_Item">Express.js</span>
+                <span class="Skill_Item">MongoDB</span>
+                <span class="Skill_Item">Python</span>
+                <span class="Skill_Item">Git & GitHub</span>
+                <span class="Skill_Item">Object-Oriented Programming</span>
+                <span class="Skill_Item">MVC Architecture</span>
+            </div>
+
+        </section>
+
+
         <!-- GitHub Section -->
         <section class="Row Card_Layout Reverse" id="GitHub">
+
             <div class="Column Text_Side">
                 <h1>GitHub</h1>
-                <p>I regularly upload my coding projects and assignments to GitHub. Check out my repositories to see what I've been working on recently.</p>
+
+                <p>
+                    I regularly upload my coding projects and assignments to GitHub.
+                    Check out my repositories to see what I've been working on recently.
+                </p>
+
                 <div class="Center_Btn">
-                    <a href="https://github.com/zabiullah-noor" target="_blank" class="Btn_Primary">
+                    <a href="https://github.com/zabiullah-noor"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       class="Btn_Primary">
                         Visit My GitHub Profile
                     </a>
                 </div>
             </div>
+
             <div class="Column Image_Side">
-                <a href="https://github.com/zabiullah-noor" target="_blank" class="Img_Hover_Wrap">
+                <a href="https://github.com/zabiullah-noor"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="Img_Hover_Wrap">
                     <img src="images/github.jpg" alt="GitHub">
                 </a>
             </div>
+
         </section>
 
+
         <!-- LinkedIn Section -->
-<section class="Row Card_Layout Reverse" id="LinkedIn">
-    <div class="Column Text_Side">
-        <h1>LinkedIn</h1>
+        <section class="Row Card_Layout Reverse" id="LinkedIn">
 
-        <p>
-            Visit my LinkedIn profile to learn more about my education,
-            skills, and professional experience. I am always interested
-            in connecting with other developers and professionals.
-        </p>
+            <div class="Column Text_Side">
+                <h1>LinkedIn</h1>
 
-        <div class="Center_Btn">
-            <a href="www.linkedin.com/in/zabiullah-noor-1a97a6380"
-               target="_blank"
-               class="Btn_Primary">
-                Visit My LinkedIn Profile
-            </a>
-        </div>
-    </div>
+                <p>
+                    Visit my LinkedIn profile to learn more about my education,
+                    skills, and professional experience. I am always interested
+                    in connecting with other developers and professionals.
+                </p>
 
-    <div class="Column Image_Side">
-        <a href="https://www.linkedin.com/in/YOUR-LINKEDIN-USERNAME/" target="_blank">
-            <img src="images/linkedin.png" alt="LinkedIn Logo">
-        </a>
-    </div>
-</section>
-
-        <!-- Contact Section -->
-        <!-- <section class="Row Card_Layout" id="Contact">
-            <div class="Column Image_Side hide-on-mobile">
-                <img src="images/contact.jpg" alt="Contact">
+                <div class="Center_Btn">
+                    <a href="https://www.linkedin.com/in/zabiullah-noor-1a97a6380/"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       class="Btn_Primary">
+                        Visit My LinkedIn Profile
+                    </a>
+                </div>
             </div>
-            <div class="Column Form_Side">
-                <h1>Contact</h1>
-                <form action="" method="POST" class="Modern_Form">
-                    <div class="Form_Group">
-                        <label for="name">Name</label>
-                        <input type="text" id="name" placeholder="Enter your name" required>
-                    </div>
 
-                    <div class="Form_Group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" placeholder="Enter your email" required>
-                    </div>
-
-                    <div class="Form_Group">
-                        <label for="message">Message</label>
-                        <textarea id="message" rows="4" placeholder="Write your message..." required></textarea>
-                    </div>
-
-                    <button type="submit" class="Btn_Submit">Send Message</button>
-                </form>
+            <div class="Column Image_Side">
+                <a href="https://www.linkedin.com/in/zabiullah-noor-1a97a6380/"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    <img src="images/linkedin.png" alt="LinkedIn Logo">
+                </a>
             </div>
-        </section> -->
 
+        </section>
+
+
+        <!-- Floating Contact Button -->
         <button id="openContact" class="Floating_Contact">
-    💬 Contact Me
-</button>
-
-
-<!-- Sliding Contact Panel -->
-<div id="contactPanel" class="Contact_Panel">
-
-    <button id="closeContact" class="Close_Button">
-        ✖
-    </button>
-
-    <h2>Contact Me</h2>
-
-    <form class="Modern_Form">
-
-        <input type="text" placeholder="Your Name" required>
-
-        <input type="email" placeholder="Your Email" required>
-
-        <textarea placeholder="Your Message"></textarea>
-
-        <button class="Btn_Submit">
-            Send
+            💬 Contact Me
         </button>
 
-    </form>
-    </div>
+
+        <!-- Sliding Contact Panel -->
+        <div id="contactPanel" class="Contact_Panel">
+
+            <button id="closeContact" class="Close_Button">
+                ✖
+            </button>
+
+            <h2>Contact Me</h2>
+
+            <form class="Modern_Form">
+
+                <input type="text" placeholder="Your Name" required>
+
+                <input type="email" placeholder="Your Email" required>
+
+                <textarea placeholder="Your Message"></textarea>
+
+                <button class="Btn_Submit">
+                    Send
+                </button>
+
+            </form>
+
+        </div>
+
     </main>
+
     <script src="js/portfolio.js"></script>
+
     <!-- Footer -->
     <footer>
         <p>&copy; 2026 Zabiullah Noor | Portfolio Website</p>
@@ -171,3 +355,4 @@
 
 </body>
 </html>
+```
